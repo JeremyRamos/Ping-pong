@@ -56,4 +56,20 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template :index
     end
   end
+
+  describe 'PUT won' do
+    let(:user) { create(:user, points: 3) }
+    it 'adds 3 points' do
+      put :won, id: user.id
+      expect(assigns(:user).points).to eq user.points + 3
+    end
+  end
+
+  describe 'PUT lose' do
+    let(:user) { create(:user, points: 3) }
+    it 'adds 1 points' do
+      put :lost, id: user.id
+      expect(assigns(:user).points).to eq user.points + 1
+    end
+  end
 end

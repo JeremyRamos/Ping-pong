@@ -1,0 +1,10 @@
+h1 All players
+
+table
+  th Players
+
+- @users.each do |user|
+  = user.name
+  br
+
+= link_to "New Player", new_user_path

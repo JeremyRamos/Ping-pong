@@ -6,12 +6,12 @@ table
   th Winner
   th Loser
 
-- @users.each do |user|
-  tr
-    td = user.name
-    td = user.points
-    td = link_to "Won", won_user_path(user), method: :put
-    td = link_to "Lost", lost_user_path(user), method: :put
-    br
+  - @users.each do |user|
+    tr
+      td = user.name
+      td = user.points
+      td = link_to "Won", won_user_path(user), method: :put
+      td = link_to "Lost", lost_user_path(user), method: :put
+      br
 br
 = link_to "New Player", new_user_path
